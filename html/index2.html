@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Fetch yle feed example</title>
+    <script src="lib/jquery-1.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="src/jquery.rss.js"></script>
+    <script>
+      jQuery(function($) {
+        $("#rss-feeds").rss("https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-147345", {
+	  entryTemplate:'<li><a href="{url}">[{date}] {title}</a><br/><img src="https:{teaserImageUrl}"><p>{bodyPlain}</p></li>',
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+    </script>
+    <style type="text/css">
+      body {
+        font-family: Arial, Verdana, Trebuchet MS, Helvetica, lucida grande, "sans-serif";
+        font-size: 12px;
+      }
+      body > div {
+        margin: 0px auto;
+        width: 800px;
+      }
+      a {
+        color: #37D;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      li {
+        padding: 10px;
+        border-top: 1px dashed #AAA;
+        background-color: #EFEFEF;
+      }
+      li:first-child {
+        border-top: none;
+      }
+      li:nth-child(2n) {
+        background-color: white;
+      }
+	img {
+	height: 100%;
+	width: 100%;
+	}
+    </style>
+ 	<script src="/libs/qimessaging/2/qimessaging.js"></script>
+        <script src="src/script.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Yle Feed</h1>
+      <div id="rss-feeds" style="display:none;"></div>
+      <p id = "index_no"></p>
+      <p id="demo"></p>
+    </div>
+  </body>
+</html>
