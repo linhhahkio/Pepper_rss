@@ -15,6 +15,9 @@
   <behaviorContent path="behavior_1">
    <userRequestable/>
    <nature>interactive</nature>
+   <triggerSentences>
+    <sentence lang="en_US">mario</sentence>
+   </triggerSentences>
    <permissions/>
   </behaviorContent>
  </contents>
