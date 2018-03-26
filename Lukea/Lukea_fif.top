@@ -1,0 +1,17 @@
+topic: ~Lukea()
+language: fif
+
+# Defining extra concepts out of words or group of words
+concept:(joo) [joo kyllä haluan "O K"]
+concept:(en) [en e ei "en halua"]
+
+# Catching inputs and triggering outputs
+u:(e:onStart) ^gotoReactivate(tag)
+
+# Replying to speech
+proposal: %tag Haluatko minun lukevan sen ääneen sinulle?
+    u1: (~joo) $read=1
+    u1: (~en) Sanoa "valmis", kun olet lukenut tai sanoa "lukea", jos haluat minun lukevan sen ääneen.
+    
+u:(valmis) $onStopped = 1
+u:(lukea) $read=1

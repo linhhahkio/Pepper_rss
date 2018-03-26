@@ -120,16 +120,15 @@
   };
 
   RSS.prototype.generateHTMLForEntries = function () {
-    var self   = this;
-    var result = { entries: [], layout: null };
+	var self = this;
+	var result = { entries: [], layout: null };
+	$(this.entries).each(function (index, elem) {
+		var entry = this;
+		var offsetStart = self.options.offsetStart;
+		var offsetEnd = self.options.offsetEnd;
+		var evaluatedString;
 
-    $(this.entries).each(function () {
-      var entry       = this;
-      var offsetStart = self.options.offsetStart;
-      var offsetEnd   = self.options.offsetEnd;
-      var evaluatedString;
-
-      // offset required
+  // offset required
       if (offsetStart && offsetEnd) {
         if (index >= offsetStart && index <= offsetEnd) {
           if (self.isRelevant(entry, result.entries)) {

@@ -6,6 +6,7 @@
     </BehaviorDescriptions>
     <Dialogs>
         <Dialog name="moi" src="moi/moi.dlg" />
+        <Dialog name="Lukea" src="Lukea/Lukea.dlg" />
     </Dialogs>
     <Resources>
         <File name="CHANGELOG" src="html/CHANGELOG.md" />
@@ -29,6 +30,7 @@
     </Resources>
     <Topics>
         <Topic name="moi_fif" src="moi/moi_fif.top" topicName="moi" language="fi_FI" />
+        <Topic name="Lukea_fif" src="Lukea/Lukea_fif.top" topicName="Lukea" language="fi_FI" />
     </Topics>
     <IgnoredPaths />
     <Translations auto-fill="en_US">

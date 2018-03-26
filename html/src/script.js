@@ -35,23 +35,44 @@ session.service("ALMemory").then(function(ALMemory) {
         		break;
     		default:
 	}
-    //extract the chosen article chosen from the given list
-    var list = document.getElementsByTagName("UL")[0];
-    var y = list.getElementsByTagName("LI");
-    var y2= y[k];
-    //extract only the text part of article for Pepper to read
-    var y3= y2.getElementsByTagName("p")[0];
 
-    //The article to show on tablet
-    var data_show = y2.innerHTML;
-    //The reading part that will be sent to Pepper
-    var data = y3.innerHTML;
+  var index_max = k + 1;
+  var index_min = k;
 
-    //sent reading part to Pepper
-    ALMemory.raiseEvent("getData",data);
-    document.getElementById("demo").innerHTML = data_show;
-
+  if (k != 0) {
+  jQuery(function($) {
+     $("#rss-feeds").rss("https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-147345", {
+ entryTemplate:'<li><a href="{url}">[{date}] {title}</a><br/><img src="https:{teaserImageUrl}"><p id="text">{bodyPlain}</p></li>',
+       offsetStart: index_min,
+       offsetEnd: index_max,
+       effect: 'slideFastSynced'
+     })
+   });
+ } else {
+   jQuery(function($) {
+      $("#rss-feeds").rss("https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-147345", {
+  entryTemplate:'<li><a href="{url}">[{date}] {title}</a><br/><img src="https:{teaserImageUrl}"><p id = "text">{bodyPlain}</p></li>',
+        limit: 1,
+        effect: 'slideFastSynced'
+      })
+    });
+ }
   });
 
-
 });
+
+//Subscribe to read event
+session.service("ALMemory").then(function (ALMemory) {
+  ALMemory.subscriber("read").then(function (subscriber) {
+    // subscriber.signal is a signal associated to "FrontTactilTouched"
+    subscriber.signal.connect(function (state) {
+      if(state == 1) {
+        var search = document.getElementById("rss-feeds");
+        var data = search.getElementsByTagName("P")[0];
+        document.getElementById("index_no").innerHTML = data.innerHTML;
+        var read_data = data.innerHTML;
+        ALMemory.raiseEvent("getData",read_data);
+      }
+    });
+  });
+  });
