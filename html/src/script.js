@@ -38,7 +38,8 @@ session.service("ALMemory").then(function(ALMemory) {
 
   var index_max = k + 1;
   var index_min = k;
-
+  
+  //Get the chosen article: if index is 1 just fetch 1 article else offset the range to fetch to match the chosen article
   if (k != 0) {
   jQuery(function($) {
      $("#rss-feeds").rss("https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET&concepts=18-147345", {
@@ -69,7 +70,6 @@ session.service("ALMemory").then(function (ALMemory) {
       if(state == 1) {
         var search = document.getElementById("rss-feeds");
         var data = search.getElementsByTagName("P")[0];
-        document.getElementById("index_no").innerHTML = data.innerHTML;
         var read_data = data.innerHTML;
         ALMemory.raiseEvent("getData",read_data);
       }
