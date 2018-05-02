@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale = 1.333,minimum-scale = 1.333,maximum-scale = 1.333" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Catalog</title>
+
+        <!-- CSS -->
+        <style>
+            html, body {
+                height: 100%;
+
+            }
+            body {
+                margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+            }
+
+		img {
+		margin: auto;
+    		display: block;
+		}
+
+	.centered {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    font-size: 25px;
+	    font-weight: bold;
+	}
+
+	.tag{
+		font-size: 15px;
+		display: inline-block;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.nopadding {
+   		padding: 0 !important;
+  	 	margin: 0 !important;
+}
+
+	.tag2 {
+		font-size: 22px;
+		display: inline-block;
+		padding: 10px;
+	}
+
+        </style>
+
+        <script src="/libs/qimessaging/2/qimessaging.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+	<div class="container-fluid">
+
+	<div class="row" id="yle" style="display:block;">
+    		<div class="col-xs-12 nopadding">
+			<img style = "height:100vh;width:100vw;object-fit:cover;" src="img/yle.jpg" alt="YLE uutiset">
+		</div>
+  	</div>
+
+	<div class="row" id="category" style="display:none;">
+    		<div class="col-xs-6 col-centered nopadding" style="background-color:lavender;">
+			<img style = "height: 100vh;width:auto;	opacity: 0.3;" src="fin.png" alt="Alue" onclick="show_Text()">
+			<p class = "centered">Uutiset läheltäsi</p>
+		</div>
+    		<div class="col-xs-6 col-centered nopadding" style="background-color:lavenderblush;">
+			<img style = "height: 100vh; width:100%; opacity: 0.3;" src="sub.jpg" alt="Aihe" onclick="show_Audio()">
+			<p class = "centered">Aihekohtaiset syötteet</p>
+		</div>
+  	</div>
+
+	<div class="row" id="area" style = "display:none;">
+		<div class = "row">
+	    		<div class="col-xs-12 ">
+				<h1> E </h1>
+				<p class = "tag">Etelä-Karjala</p>
+				<p class = "tag">Etelä-Pohjanmaa</p>
+				<p class = "tag">Etelä-Savo</p>
+
+			</div>
+		</div>
+		<div class = "row">
+	    		<div class="col-xs-12 col-centered">
+				<h1> K-L </h1>
+				<p class = "tag">Kainuu</p>
+				<p class = "tag">Kanta-Häme</p>
+				<p class = "tag">Keski-Pohjanmaa</p>
+				<p class = "tag">Keski-Suomi</p>
+				<p class = "tag">Kymenlaakso</p>
+				<p class = "tag">Lappi</p>
+
+			</div>
+		</div>
+		<div class = "row">
+	    		<div class="col-xs-12 col-centered">
+				<h1> P </h1>
+				<p class = "tag">Pirkanmaa</p>
+				<p class = "tag">Pohjanmaa</p>
+				<p class = "tag">Pohjois-Karjala</p>
+				<p class = "tag">Pohjois-Pohjanmaa</p>
+				<p class = "tag">Pohjois-Savo</p>
+				<p class = "tag">Päijät-Häme</p>
+			</div>
+		</div>
+		<div class = "row">
+	    		<div class="col-xs-12 col-centered">
+				<h1> S-U-V </h1>
+				<p class = "tag">Satakunta</p>
+				<p class = "tag">Uusimaa</p>
+				<p class = "tag">Varsinais-Suomi</p>
+			</div>
+		</div>
+  	</div>
+
+	<div class="row" id="subject" style = "display:none;padding-top:45px;padding-right:20px;">
+		<div class = "row">
+	    		<div class="col-xs-3 col-centered">
+				<img src="img/flag.png" alt="Kotimaa">
+				<p class = "tag2">Kotimaa</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/world.png" alt="Ulkomaat">
+				<p class = "tag2">Ulkomaat</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/business.png" alt="Talous">
+				<p class = "tag2">Talous</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/politic.png" alt="Politiikka">
+				<p class = "tag2">Politiikka</p>
+			</div>
+		</div>
+		<div class = "row">
+	    		<div class="col-xs-3 col-centered">
+				<img src="img/culture.png" alt="Kulttuuri">
+				<p class = "tag2">Kulttuuri</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/entertainment.png" alt="Viihde">
+				<p class = "tag2">Viihde</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/science.png" alt="Tiede">
+				<p class = "tag2">Tiede</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/nature.png" alt="Luonto">
+				<p class = "tag2">Luonto</p>
+			</div>
+		</div>
+		<div class = "row">
+	    		<div class="col-xs-3 col-centered">
+				<img src="img/health.png" alt="Terveys">
+				<p class = "tag2">Terveys</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/media.png" alt="Media">
+				<p class = "tag2">Media</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/traffic.png" alt="Liikenne">
+				<p class = "tag2">Liikenne</p>
+			</div>
+			<div class="col-xs-3 col-centered">
+				<img src="img/coffee.png" alt="Näkökulmat">
+				<p class = "tag2">Näkökulmat</p>
+			</div>
+		</div>
+  	</div>
+
+	</div>
+    </body>
+</html>
