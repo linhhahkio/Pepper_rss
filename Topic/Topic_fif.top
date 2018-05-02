@@ -1,0 +1,23 @@
+topic: ~Topic()
+language: fif
+
+# Defining extra concepts out of words or group of words
+concept:(alue) [Kainuu Etelä-Karjala Etelä-Pohjanmaa Etelä-Savo Kanta-Häme Keski-Pohjanmaa Kymenlaakso Lappi Pirkanmaa Pohjanmaa Pohjois-Karjala Pohjois-Pohjanmaa Pohjois-Savo Päijät-Häme Satakunta Uusimaa Varsinais-Suomi]
+concept:(aihe) [Kotimaa Ulkomaat Talous Politiikka Kulttuuri Viihde Tiede Luonto Terveys Media Liikenne Näkökulmat]
+# Catching inputs and triggering outputs
+u:(e:onStart) ^gotoReactivate(tag)
+
+# Replying to speech
+#u:(~hello) ~hello
+
+proposal: %tag Pääuutiset tai Muut uutiset?
+    u1:(Pääuutiset) $onStopped = $Dialog/LastInput 
+    u1:(Muut) %category $rss/others = 1 \pau = 500\ Alue tai aihe ?
+        u2:(alue) $rss/area = 1 Mikä alue haluat?
+            u3:(~alue) $onStopped = $Dialog/LastInput
+            u3:(mene takaisin) $rss/others = 1 ^gotoReactivate(category)
+        u2:(aihe) $rss/subject = 1 Mikä aihe haluat?
+            u3:(~aihe) $onStopped = $Dialog/LastInput
+            u3:(mene takaisin) $rss/others = 1 ^gotoReactivate(category)
+        u2:(mene takaisin) $rss/reset = 1 ^gotoReactivate(tag)
+u:(e:onDone) $rss/reset = 1

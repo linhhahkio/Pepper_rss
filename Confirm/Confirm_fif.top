@@ -1,0 +1,19 @@
+topic: ~Confirm()
+language: fif
+
+# Defining the user options for confirmation.
+
+#options for "yes"
+concept:(joo) [joo kyllä haluan] {kiitos}
+concept:(luetaan) {joo} luetaan {vaan}{kiitos}
+
+#options for "no"
+concept:(en) {no} [en e "en halua" ei] {kiitos}
+
+# Catching inputs and triggering outputs
+
+# Replying to speech
+u:(~joo) $output_1 = 1
+u:(~luetaan) $output_1 = 1
+u:(~en) $output_2 = 1
+u:(lopetta) $end = 1
