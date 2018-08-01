@@ -10,7 +10,7 @@ u:(e:onStart) ^gotoReactivate(tag)
 # Replying to speech
 #u:(~hello) ~hello
 
-proposal: %tag Pääuutiset tai Muut uutiset?
+proposal: %tag Pääuutiset vai Muut uutiset?
     u1:(Pääuutiset) $onStopped = $Dialog/LastInput 
     u1:(Muut) %category $rss/others = 1 \pau = 500\ Alue tai aihe ?
         u2:(alue) $rss/area = 1 Mikä alue haluat?
@@ -20,4 +20,5 @@ proposal: %tag Pääuutiset tai Muut uutiset?
             u3:(~aihe) $onStopped = $Dialog/LastInput
             u3:(mene takaisin) $rss/others = 1 ^gotoReactivate(category)
         u2:(mene takaisin) $rss/reset = 1 ^gotoReactivate(tag)
+    u1: (Lopetta) $stop = 1
 u:(e:onDone) $rss/reset = 1
