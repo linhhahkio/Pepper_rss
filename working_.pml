@@ -27,13 +27,11 @@
         <File name="script" src="html/src/script.js" />
         <File name="compiler" src="html/utils/compiler.jar" />
         <File name="index2" src="html/index2.html" />
-        <File name="README" src="README" />
         <File name="index" src="html/topic/index.html" />
         <File name="script" src="html/topic/script.js" />
         <File name="Finland" src="html/topic/Finland.jpg" />
         <File name="fin" src="html/topic/fin.png" />
         <File name="news_source" src="html/topic/db/news_source.db" />
-        <File name="epicsax" src="behavior_1/epicsax.ogg" />
         <File name="sub" src="html/topic/sub.jpg" />
         <File name="flag" src="html/topic/img/flag.png" />
         <File name="world" src="html/topic/img/world.png" />
@@ -50,6 +48,7 @@
         <File name="script2 (copy)" src="html/src/script2 (copy).js" />
         <File name="script2" src="html/src/script2.js" />
         <File name="yle" src="html/topic/img/yle.jpg" />
+        <File name="news_readme" src="news_readme" />
     </Resources>
     <Topics>
         <Topic name="Lukea_fif" src="Lukea/Lukea_fif.top" topicName="Lukea" language="fi_FI" />
