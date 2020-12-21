@@ -69,5 +69,6 @@ When the program finish going through all 5 piece of news, next turn output "onE
 -> "Say Text" box informs user that it reaches the last piece of news and ask them if they want to start again
 
 -> "Confirm" box
-	* If user agrees -> output "output_1" -> start the loop again (see SECTION 4)
-	* If user do not want to read this topic anymore -> output "output_2" -> loop back to the beginning of the program (see SECTION 1)
+
+* If user agrees -> output "output_1" -> start the loop again (see SECTION 4)
+* If user do not want to read this topic anymore -> output "output_2" -> loop back to the beginning of the program (see SECTION 1)
