@@ -3,7 +3,7 @@ Reading news with Pepper using Rss fetch plugin
 
 ## This is an application to read news using RSS 
 
-## The app using online source rss plugin: https://github.com/sdepold/jquery-rss. Other plugins/ own rss code are compatible with the program with some modification needed in extracting the reading part to send to Pepper.
+### The app using online source rss plugin: https://github.com/sdepold/jquery-rss. Other plugins/ own rss code are compatible with the program with some modification needed in extracting the reading part to send to Pepper.
 
 ## Program's flow:
 - "Wait" box waits for any switch time between programs so the program can start normally
@@ -37,7 +37,9 @@ Show 5 latest news (html/index.html): the page gets the url from the memory and 
 -> "Subscribe to Event": get the signal when all news finished loading so the program can continue and receives the title of all news.
 -> "Title" box
 ### 4. "Title" box loops through all title of news, store the the news' index into memory and ask if user want to read that specific piece of news input 
+
 4.1 Start Loop
+
 -> trigger input "Loop" to start the loop 
 -> output "out_Loop"
 -> "Animated Say Text" says the title of the news and ask if user want to read it.
@@ -56,7 +58,9 @@ Show 5 latest news (html/index.html): the page gets the url from the memory and 
 	+ If user do not want to read this topic anymore and say "Lopettaa" -> 
 		* input "resetLoop" of "title" box to reset counter
 		* Loop back to the beginning of the program (see SECTION 1)
+		
 4.2 End of Loop
+
 When the program finish going through all 5 piece of news, next turn output "onEndList" will be triggered instead of "out_Loop" and counter is set back to 0
 -> "Say Text" box informs user that it reaches the last piece of news and ask them if they want to start again
 -> "Confirm" box
