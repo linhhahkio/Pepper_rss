@@ -62,11 +62,12 @@ Show 5 latest news (html/index.html): the page gets the url from the memory and 
 	* If user do not want to read this topic anymore and say "Lopettaa" -> 
 		+ input "resetLoop" of "title" box to reset counter
 		+ Loop back to the beginning of the program (see SECTION 1)		
+
 4.2 End of Loop
 
 When the program finish going through all 5 piece of news, next turn output "onEndList" will be triggered instead of "out_Loop" and counter is set back to 0
 -> "Say Text" box informs user that it reaches the last piece of news and ask them if they want to start again
 
 -> "Confirm" box
-	+ If user agrees -> output "output_1" -> start the loop again (see SECTION 4)
-	+ If user do not want to read this topic anymore -> output "output_2" -> loop back to the beginning of the program (see SECTION 1)
+	* If user agrees -> output "output_1" -> start the loop again (see SECTION 4)
+	* If user do not want to read this topic anymore -> output "output_2" -> loop back to the beginning of the program (see SECTION 1)
