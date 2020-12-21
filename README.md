@@ -47,7 +47,6 @@ Show 5 latest news (html/index.html): the page gets the url from the memory and 
 -> "Animated Say Text" says the title of the news and ask if user want to read it.
 
 -> "Confirm" box
-
 	* If user agrees -> output "output_1"
 		-> "Show" box (SECTION 3) input "onNew": get the piece of news' index from memory and show that specific piece of new on the tablet.
 		-> output "output" ->
@@ -56,7 +55,6 @@ Show 5 latest news (html/index.html): the page gets the url from the memory and 
 			+ "Tactile head": Get the signal when the middle head of robot is touch -> input "Stop" of "Say Text" box to stop the robot from speaking
 			+ "Subscribe to TextInterrupt": gets the signal when Pepper is stopped speaking by the external button 
 	-> "Wait" box: When the robot finishs speaking or forced to stop, the program wait for 1 sec before loop back to "Show" box to show 5 latest piece of news again
-	
 	* If user do not want to read that piece of new
 		+ output "output_2"
 		+ input "Loop" to move to the next piece of news
